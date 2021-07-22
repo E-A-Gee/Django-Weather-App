@@ -21,12 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4s+7o$%*zvu(w4@sk#zv&^8m1fi!awur5-1_%(_-v9jgykum#t'
+#SECRET_KEY = 'django-insecure-4s+7o$%*zvu(w4@sk#zv&^8m1fi!awur5-1_%(_-v9jgykum#t'
+SECRET_KEY = os.environ.get('WEATHER_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('WEATHER_DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['geelizweather.herokuapp.com']
 
 
 # Application definition
