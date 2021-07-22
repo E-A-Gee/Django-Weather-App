@@ -24,6 +24,7 @@ def index(request):
         weather_response = requests.get(open_weather_url).json()
 
         city_weather = {
+            'user_ip':user_ip,
             'city': city,
             'temperature': weather_response['main']['temp'],
             'description':weather_response[0]['description'],
