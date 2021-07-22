@@ -9,11 +9,11 @@ def index(request):
         return render(request, 'weather_app/weather.html',{})
 
     else:
-        # # Get user IP address
-        # user_ip = request.META.get("REMOTE_ADDR")
+        # Get user IP address
+        user_ip = request.META.get("REMOTE_ADDR")
         
         # Get user longitude and latitude
-        ip_response = requests.get(f'http://ip-api.com/json/108.14.13.170').json()
+        ip_response = requests.get(f'http://ip-api.com/json/{user_ip}').json()
         print(ip_response)
         user_lat = ip_response['lat']
         user_lon = ip_response['lon']
