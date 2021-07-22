@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import requests
+from ipware import get_client_ip
 # Create your views here.
 
 def index(request):
@@ -10,7 +11,9 @@ def index(request):
 
     else:
         # Get user IP address
-        user_ip = request.META.get("REMOTE_ADDR")
+        user_ip, is_routable = get_client_ip(request)
+
+        #user_ip = request.META.get("REMOTE_ADDR")
         
         # Get user longitude and latitude
         ip_response = requests.get(f'http://ip-api.com/json/{user_ip}').json()
