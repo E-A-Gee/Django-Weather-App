@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'weather_app/main.css' %}">
+    <link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet' type='text/css'>
+
+    <title>Weather</title>
+</head>
+<body>
+    <div class="location">
+        <h1 class="location-timezone">{{city}}</h1>
+        <h1 class="location-timezone">Timezone</h1>
+        <p>Icon</p>
+    </div>
+
+    <div class="temperature">
+        <div class="degree-section">
+            <h2 class="degree">34</h2>
+            <span>F</span>
+        </div>
+        <div class="description">
+            It's warm out?
+        </div>
+    </div>
+    
+    <div>
+        <form class="" method=POST  action="{% url 'index-view' %}">
+
+            {% csrf_token %}
+
+            <input class="" type="search" placeholder="Search City" aria-label="Search City" name="search-city">
+            <button class="" type="submit"><div class="fa fa-search"></div></button>
+          </form>
+    </div>
+</body>
+</html>
