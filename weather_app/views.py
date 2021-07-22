@@ -15,22 +15,22 @@ def index(request):
         # Get user longitude and latitude
         ip_response = requests.get(f'http://ip-api.com/json/108.14.13.170').json()
         print(ip_response)
-        # user_lat = ip_response['lat']
-        # user_lon = ip_response['lon']
-        # city = ip_response['city']
+        user_lat = ip_response['lat']
+        user_lon = ip_response['lon']
+        city = ip_response['city']
         
-        # #OpenWeatherAPI
-        # open_weather_url= f'api.openweathermap.org/data/2.5/weather?lat={user_lat}&lon={user_lon}&appid=65d6a2854eae556a61d30eaa38bea1a6'
-        # weather_response = requests.get(open_weather_url).json()
+        #OpenWeatherAPI
+        open_weather_url= f'api.openweathermap.org/data/2.5/weather?lat={user_lat}&lon={user_lon}&appid=65d6a2854eae556a61d30eaa38bea1a6'
+        weather_response = requests.get(open_weather_url).json()
 
-        # city_weather = {
-        #     'city': city,
-        #     'temperature': weather_response['main']['temp'],
-        #     'description':weather_response[0]['description'],
-        #     'icon': weather_response['weather'][0]['description']
-        # }
+        city_weather = {
+            'city': city,
+            'temperature': weather_response['main']['temp'],
+            'description':weather_response[0]['description'],
+            'icon': weather_response['weather'][0]['description']
+        }
 
-        # context = {'city_weather':city_weather}
+        context = {'city_weather':city_weather}
 
-        return render(request, 'weather_app/weather.html')
+        return render(request, 'weather_app/weather.html', context)
         # remember to enter in context
