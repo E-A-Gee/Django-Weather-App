@@ -43,3 +43,8 @@ body {
 .degree-section h2 {
     font-size: 40px;
 }
+
+.weather-icon {
+    max-width: 500%;
+    height: auto;
+}
