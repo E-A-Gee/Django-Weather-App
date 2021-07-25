@@ -12,22 +12,18 @@
 </head>
 <body>
     <div class="location">
-        <h1 class="location-timezone">hewwooooo {{city}}</h1>
-        {% if not user_ip %}
-            <h1>SHE AINT HERE</h1>
-        {% endif %}
         <h1 class="location-timezone">{{city}}</h1>
         <h1 class="location-timezone">Timezone</h1>
-        <p>Icon</p>
+        <p><img src="http://openweathermap.org/img/w/{{icon}}.png" alt="Weather icon."></p>
     </div>
 
     <div class="temperature">
         <div class="degree-section">
-            <h2 class="degree">34</h2>
+            <h2 class="degree">{{temperature}}</h2>
             <span>F</span>
         </div>
         <div class="description">
-            It's warm out?
+            {{description}}
         </div>
     </div>
     
