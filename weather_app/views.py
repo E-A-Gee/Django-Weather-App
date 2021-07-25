@@ -19,11 +19,10 @@ def index(request):
     weather_response = requests.get(open_weather_url).json()
 
     city_weather = {
-        'user_ip':is_routable,
         'city': city,
         'temperature': weather_response['main']['temp'],
-        'description':weather_response[0]['description'],
-        'icon': weather_response['weather'][0]['description']
+        'description':weather_response['weather'][0]['description'],
+        'icon': weather_response['weather'][0]['icon']
     }
         
     return render(request, 'weather_app/weather.html', city_weather)
