@@ -45,6 +45,6 @@ body {
 }
 
 .weather-icon {
-    max-width: 500%;
+    width: 500%;
     height: auto;
 }
