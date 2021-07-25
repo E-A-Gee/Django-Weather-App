@@ -15,7 +15,7 @@ def index(request):
     city = ip_response['city']
 
     #OpenWeatherAPI - Weather info from lat and lon
-    open_weather_url= f'http://api.openweathermap.org/data/2.5/weather?lat={user_lat}&lon={user_lon}&appid=65d6a2854eae556a61d30eaa38bea1a6'
+    open_weather_url= f'http://api.openweathermap.org/data/2.5/weather?lat={user_lat}&lon={user_lon}&units=imperial&appid=65d6a2854eae556a61d30eaa38bea1a6'
     weather_response = requests.get(open_weather_url).json()
 
     city_weather = {
