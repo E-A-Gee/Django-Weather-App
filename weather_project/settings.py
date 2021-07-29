@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('WEATHER_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('WEATHER_DEBUG')
 
-ALLOWED_HOSTS = ['geelizweather.herokuapp.com']
+ALLOWED_HOSTS = ['geelizweather.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
