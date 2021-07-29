@@ -9,7 +9,7 @@ def index(request):
 
     # Get user longitude and latitude
     ip_response = requests.get(f'http://ip-api.com/json/{user_ip}').json()
-    print(ip_response)
+    
     user_lat = ip_response['lat']
     user_lon = ip_response['lon']
     city = ip_response['city']
