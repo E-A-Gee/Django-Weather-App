@@ -9,6 +9,7 @@ def index(request):
         search_city = request.POST.get('search-city')
         open_weather_url= f'http://api.openweathermap.org/data/2.5/weather?q={search_city}&units=imperial&appid=65d6a2854eae556a61d30eaa38bea1a6'
         weather_response = requests.get(open_weather_url).json()
+        city = weather_response['name']
 
     #if getting ip address
     else:
