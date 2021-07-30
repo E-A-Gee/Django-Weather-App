@@ -28,12 +28,12 @@
     </div>
     
     <div>
-        <form class="" method=POST  action="{% url 'index-view' %}">
+        <form method=POST  action="{% url 'index-view' %}">
 
             {% csrf_token %}
 
-            <input class="" type="search" placeholder="Search City" aria-label="Search City" name="search-city">
-            <button class="" type="submit"><div class="fa fa-search"></div></button>
+            <input class="search-field" type="search" placeholder="Search City or Zipcode" aria-label="Search City" name="search-city">
+            <button class="search-button" type="submit"><img src="https://geeliz-django-bucket2.s3.us-east-2.amazonaws.com/search.png.webp"></button>
           </form>
     </div>
 </body>
