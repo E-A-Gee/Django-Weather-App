@@ -8,7 +8,7 @@ def index(request):
     if request.method=="POST":
         search_city = request.POST.get('search-city')
         if search_city.isnumeric():
-            open_weather_url= f'http://api.openweathermap.org/data/2.5/weather?zip={search_city}&units=imperial&appid=65d6a2854eae556a61d30eaa38bea1a6'
+            open_weather_url= f'http://api.openweathermap.org/data/2.5/weather?zip={search_city},USA&units=imperial&appid=65d6a2854eae556a61d30eaa38bea1a6'
         else:
             open_weather_url= f'http://api.openweathermap.org/data/2.5/weather?q={search_city}&units=imperial&appid=65d6a2854eae556a61d30eaa38bea1a6'
         weather_response = requests.get(open_weather_url).json()
