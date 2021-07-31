@@ -84,3 +84,7 @@ cursor: pointer;
 width: 25px;
 object-fit: cover;
 }
+
+.error-class {
+    padding-bottom: 15px;
+}
