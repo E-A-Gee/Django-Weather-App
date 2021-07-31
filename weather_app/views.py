@@ -29,12 +29,14 @@ def index(request):
         #OpenWeatherAPI - Weather info from lat and lon
         open_weather_url= f'http://api.openweathermap.org/data/2.5/weather?lat={user_lat}&lon={user_lon}&units=imperial&appid=65d6a2854eae556a61d30eaa38bea1a6'
         weather_response = requests.get(open_weather_url).json()
-
-    city_weather = {
-        'city': city,
-        'temperature': weather_response['main']['temp'],
-        'description':weather_response['weather'][0]['description'],
-        'icon': weather_response['weather'][0]['icon']
-    }
+    if weather_response['cod'] == '404':
+        city_weather = {'error':'City not found.'}
+    else:
+        city_weather = {
+            'city': city,
+            'temperature': weather_response['main']['temp'],
+            'description':weather_response['weather'][0]['description'],
+            'icon': weather_response['weather'][0]['icon']
+        }
         
     return render(request, 'weather_app/weather.html', city_weather)
