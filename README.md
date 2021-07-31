@@ -8,7 +8,7 @@ The other was more specific to creating a weather app in Django.
 
 I added a searchbar so that users can change the location they'd like to view weather for.
 
-###Resources used:###
+### Resources used:
 
 Pretty Printed's **Creating a Weather App in Django Using Python Requests** tutorial on YouTube:
 
