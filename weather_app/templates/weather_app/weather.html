@@ -10,21 +10,26 @@
     <title>Weather</title>
 </head>
 <body>
-    <div class="location">
-        <h1 class="location-timezone">{{city}}</h1>
-        <img class="weather-icon" src="https://geeliz-django-bucket2.s3.us-east-2.amazonaws.com/WeatherIcons/{{icon}}.png
-            " alt="Weather icon.">
-    </div>
+    {% if {{error}} %}
+        <h1>City not found.</h1>
+    {% else %}
 
-    <div class="temperature">
-        <div class="degree-section">
-            <h2 class="degree">{{temperature|floatformat:"0"}}</h2>
-            <span>°F</span>
+        <div class="location">
+            <h1 class="location-timezone">{{city}}</h1>
+            <img class="weather-icon" src="https://geeliz-django-bucket2.s3.us-east-2.amazonaws.com/WeatherIcons/{{icon}}.png
+                " alt="Weather icon.">
         </div>
-        <div class="description">
-            {{description|capfirst}}.
+
+        <div class="temperature">
+            <div class="degree-section">
+                <h2 class="degree">{{temperature|floatformat:"0"}}</h2>
+                <span>°F</span>
+            </div>
+            <div class="description">
+                {{description|capfirst}}.
+            </div>
         </div>
-    </div>
+    {% endif %}
     
     <div>
         <form method=POST  action="{% url 'index-view' %}">
