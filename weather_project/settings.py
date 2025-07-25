@@ -29,6 +29,7 @@ DEBUG = (os.environ.get('WEATHER_DEBUG') == 'True')
 
 ALLOWED_HOSTS = ['geeliz-weather.up.railway.app']
 
+CSRF_TRUSTED_ORIGINS = ['https://geeliz-weather.up.railway.app']
 
 # Application definition
 
