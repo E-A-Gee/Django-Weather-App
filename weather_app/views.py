@@ -1,7 +1,8 @@
 from django.shortcuts import render
 import requests
 from ipware import get_client_ip
-# Create your views here.
+from django.conf import settings
+
 
 def index(request):
     #if using the searchbar
@@ -20,10 +21,13 @@ def index(request):
         user_ip, is_routable = get_client_ip(request)
 
         # Get user longitude and latitude
-        ip_response = requests.get(f'http://ip-api.com/json/{user_ip}').json()
+        ip_response = requests.get(
+            "https://ipgeolocation.abstractapi.com/v1/"
+            f"?api_key={ip_api_key}&ip_address={ip_address}"
+        ).json
         
-        user_lat = ip_response['lat']
-        user_lon = ip_response['lon']
+        user_lat = ip_response['latitude']
+        user_lon = ip_response['longitude']
         city = ip_response['city']
 
         #OpenWeatherAPI - Weather info from lat and lon
