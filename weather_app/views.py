@@ -23,7 +23,7 @@ def index(request):
         # Get user longitude and latitude
         ip_response = requests.get(
             "https://ipgeolocation.abstractapi.com/v1/"
-            f"?api_key={ip_api_key}&ip_address={ip_address}"
+            f"?api_key={settings.IP_API_KEY}&ip_address={ip_address}"
         ).json
         
         user_lat = ip_response['latitude']
